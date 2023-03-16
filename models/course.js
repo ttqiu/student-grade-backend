@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       department: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
       }
     },
     {
