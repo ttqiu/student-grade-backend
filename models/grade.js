@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Grades.init(
+  Grade.init(
     {
       student_id: {
         type: DataTypes.INTEGER,
