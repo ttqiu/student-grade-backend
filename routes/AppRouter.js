@@ -1,12 +1,10 @@
-const Router = require('express').Router()
-// const UserRouter = require('./UserRouter')
-// const ClassRouter = require('./ClassRouter')
-// const CommentRouter = require('./CommentRouter')
-// const ClassListRouter = require('./ClassListRouter')
+const router = require('express').Router()
+const StudentRouter = require('./StudentRouter')
+const CourseRouter = require('./CourseRouter')
+const GradeRouter = require('./GradesRouter')
 
-// Router.use('/users', UserRouter)
-// Router.use('/classes', ClassRouter)
-// Router.use('/comments', CommentRouter)
-// Router.use('/classlists', ClassListRouter)
+router.use('/grades', GradeRouter)
+router.use('/students', StudentRouter)
+router.use('/courses', CourseRouter)
 
-module.exports = Router
+module.exports = router
