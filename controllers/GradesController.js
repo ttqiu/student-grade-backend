@@ -48,9 +48,27 @@ const EditStudentCourseGrade = async (req, res) => {
   }
 }
 
+const DeleteStudentCourseGrade = async (req, res) => {
+  try {
+    await Grade.destroy({
+      where: {
+        student_id: parseInt(req.params.student_id),
+        course_id: parseInt(req.params.course_id)
+      },
+      returning: true
+    })
+    return res.status(200).send({
+      msg: `grade was deleted`
+    })
+  } catch (err) {
+    throw err
+  }
+}
+
 module.exports = {
   GetAll,
   AssignStudentToCourse,
   GetAllCoursesByStudentId,
-  EditStudentCourseGrade
+  EditStudentCourseGrade,
+  DeleteStudentCourseGrade
 }
